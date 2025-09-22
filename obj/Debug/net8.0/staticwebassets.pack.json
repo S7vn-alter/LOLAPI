@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\426133624\\Documents\\ApiLolNew\\wwwroot\\images\\0a78f0cc-f112-4fd1-82f2-840b311fcc4e_YoneImg.jfif",
+      "PackagePath": "staticwebassets\\images\\0a78f0cc-f112-4fd1-82f2-840b311fcc4e_YoneImg.jfif"
+    },
+    {
+      "Id": "C:\\Users\\426133624\\Documents\\ApiLolNew\\wwwroot\\images\\97ca18b1-0c20-4e28-a228-0477cea25f7d.jfif",
+      "PackagePath": "staticwebassets\\images\\97ca18b1-0c20-4e28-a228-0477cea25f7d.jfif"
+    },
+    {
+      "Id": "C:\\Users\\426133624\\Documents\\ApiLolNew\\wwwroot\\images\\aee897c0-29ae-4922-a862-cdec26ca68ce_YoneImg.jfif",
+      "PackagePath": "staticwebassets\\images\\aee897c0-29ae-4922-a862-cdec26ca68ce_YoneImg.jfif"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ApiLolNew.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ApiLolNew.props",
+      "PackagePath": "build\\ApiLolNew.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ApiLolNew.props",
+      "PackagePath": "buildMultiTargeting\\ApiLolNew.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ApiLolNew.props",
+      "PackagePath": "buildTransitive\\ApiLolNew.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
