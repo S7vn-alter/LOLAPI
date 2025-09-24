@@ -20,7 +20,7 @@ namespace ApiLolNew.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromForm] Champ champ, IFormFile file)
+        public async Task<IActionResult> CreateAsync([FromForm] Champ champ, IFormFile file)
         {
             try
             {
@@ -30,17 +30,18 @@ namespace ApiLolNew.Controllers
                 // salvar imagem
                 if (file != null && file.Length > 0)
                 {
-                    var folder = Path.Combine("wwwroot", "images");
-                    if (!Directory.Exists(folder))
-                        Directory.CreateDirectory(folder);
+                    var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    if (!Directory.Exists(uploadsPath))
+                        Directory.CreateDirectory(uploadsPath);
 
-                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                    var filePath = Path.Combine(folder, fileName);
+                    var filePath = Path.Combine(uploadsPath, file.FileName);
 
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
-                        file.CopyTo(stream);
+                        await file.CopyToAsync(stream);
                     }
+
+                    champ.ImageChamp = "/images/" + file.FileName;
                 }
 
                 _context.Champs.Add(champ);

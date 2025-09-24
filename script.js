@@ -1,101 +1,49 @@
-const apiUrl = "http://localhost:5149/api/champ";
-let currentChampId = null;
+const apiUrl = "http://localhost:5149/api/Champ/listarTodos";
 
-// Cadastrar campeão
-document.getElementById("champForm").addEventListener("submit", async function(e){
-  e.preventDefault();
-
-  const formData = new FormData(this);
-
+// Função para buscar os campeões
+async function carregarChamps() {
   try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      body: formData
-    });
-
-    if (!response.ok) throw new Error("Erro ao cadastrar campeão");
-
-    const champ = await response.json();
-    currentChampId = champ.id;
-
-    // Exibir campeão no front (imagem do upload)
-    const fileInput = this.querySelector("input[type=file]");
-    const file = fileInput.files[0];
-    mostrarCampeao(champ, file);
-
-    document.getElementById("message").textContent = "Campeão cadastrado!";
-  } catch (err) {
-    console.error(err);
-    document.getElementById("message").textContent = "Erro ao cadastrar.";
-  }
-});
-
-// Buscar campeão por nome
-async function buscarCampeao(){
-  const nome = document.getElementById("searchName").value.trim();
-  if (!nome) return;
-
-  try {
-    const response = await fetch(`${apiUrl}/ObterPorNome/${nome}`);
-    if (!response.ok) throw new Error("Nenhum campeão encontrado");
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error("Erro ao buscar campeões");
+    }
 
     const champs = await response.json();
-    const champ = champs[0]; // pegar o primeiro
-    currentChampId = champ.id;
+    const champList = document.getElementById("champ-list");
 
-    mostrarCampeao(champ);
-    document.getElementById("message").textContent = "Campeão encontrado!";
-  } catch(err){
-    console.error(err);
-    esconderCampeao();
-    document.getElementById("message").textContent = "Nenhum campeão encontrado.";
-  }
-}
+    // Limpa antes de exibir
+    champList.innerHTML = "";
 
-// Deletar campeão
-async function deletarCampeao(){
-  if (!currentChampId){
-    document.getElementById("message").textContent = "Nenhum campeão selecionado.";
-    return;
-  }
-
-  try {
-    const response = await fetch(`${apiUrl}/${currentChampId}`, {
-      method: "DELETE"
-    });
-
-    if (response.status === 204){
-      esconderCampeao();
-      document.getElementById("message").textContent = "Nenhum campeão encontrado.";
-      currentChampId = null;
-    } else {
-      document.getElementById("message").textContent = "Erro ao deletar.";
+    if (champs.length === 0) {
+      champList.innerHTML = "<p>Nenhum campeão encontrado.</p>";
+      return;
     }
-  } catch(err){
-    console.error(err);
-    document.getElementById("message").textContent = "Erro na conexão.";
+
+    // Renderiza cada campeão
+    champs.forEach(champ => {
+      const champDiv = document.createElement("div");
+      champDiv.style.border = "1px solid #ccc";
+      champDiv.style.margin = "10px";
+      champDiv.style.padding = "10px";
+      champDiv.style.maxWidth = "300px";
+
+      champDiv.innerHTML = `
+        <h2>${champ.name}</h2>
+        <p><strong>Lane:</strong> ${champ.lane}</p>
+        <p><strong>Q:</strong> ${champ.skillQ}</p>
+        <p><strong>W:</strong> ${champ.skillW}</p>
+        <p><strong>E:</strong> ${champ.skillE}</p>
+        <p><strong>R:</strong> ${champ.skillR}</p>
+        <img src="${champ.imageChamp}" alt="${champ.name}" width="200">
+      `;
+
+      champList.appendChild(champDiv);
+    });
+  } catch (error) {
+    console.error(error);
+    document.getElementById("champ-list").innerHTML = "<p>Erro ao carregar campeões.</p>";
   }
 }
 
-// Exibir campeão
-function mostrarCampeao(champ, file = null){
-  document.getElementById("champDisplay").style.display = "block";
-  document.getElementById("champName").textContent = champ.name;
-  document.getElementById("champLane").textContent = champ.lane;
-  document.getElementById("champQ").textContent = champ.skillQ;
-  document.getElementById("champW").textContent = champ.skillW;
-  document.getElementById("champE").textContent = champ.skillE;
-  document.getElementById("champR").textContent = champ.skillR;
-
-  const img = document.getElementById("champImage");
-  if (file) {
-    img.src = URL.createObjectURL(file);
-  } else {
-    img.src = ""; // Sem imagem salva no banco
-  }
-}
-
-// Esconder campeão
-function esconderCampeao(){
-  document.getElementById("champDisplay").style.display = "none";
-}
+// Carrega quando a página abre
+window.onload = carregarChamps;

@@ -2,44 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>League of Legends Champs</title>
+  <title>Campeões LoL</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Gerenciar Campeões</h1>
-
-  <!-- Formulário de cadastro -->
-  <form id="champForm" enctype="multipart/form-data">
-    <input type="text" name="Name" placeholder="Nome do Campeão" required><br>
-    <input type="text" name="Lane" placeholder="Lane" required><br>
-    <input type="text" name="SkillQ" placeholder="Skill Q" required><br>
-    <input type="text" name="SkillW" placeholder="Skill W" required><br>
-    <input type="text" name="SkillE" placeholder="Skill E" required><br>
-    <input type="text" name="SkillR" placeholder="Skill R" required><br>
-    <input type="file" name="file" accept="image/*"><br>
-    <button type="submit">Cadastrar Campeão</button>
-  </form>
-
-  <hr>
-
-  <!-- Busca e deletar -->
-  <input type="text" id="searchName" placeholder="Buscar por nome">
-  <button onclick="buscarCampeao()">Buscar</button>
-  <button onclick="deletarCampeao()">Deletar</button>
-
-  <hr>
-
-  <!-- Exibir campeão -->
-  <div id="champDisplay" style="display:none;">
-    <h2 id="champName"></h2>
-    <p><strong>Lane:</strong> <span id="champLane"></span></p>
-    <p><strong>Skill Q:</strong> <span id="champQ"></span></p>
-    <p><strong>Skill W:</strong> <span id="champW"></span></p>
-    <p><strong>Skill E:</strong> <span id="champE"></span></p>
-    <p><strong>Skill R:</strong> <span id="champR"></span></p>
-    <img id="champImage" src="" alt="Campeão" style="max-width:200px;">
-  </div>
-
-  <p id="message"></p>
+  <h1>Escolha seu Campeão</h1>
+  <div id="champ-list"></div>
 
   <script src="script.js"></script>
 </body>

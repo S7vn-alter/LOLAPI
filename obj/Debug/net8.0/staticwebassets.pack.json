@@ -9,8 +9,24 @@
       "PackagePath": "staticwebassets\\images\\97ca18b1-0c20-4e28-a228-0477cea25f7d.jfif"
     },
     {
+      "Id": "C:\\Users\\426133624\\Documents\\ApiLolNew\\wwwroot\\images\\YoneImg.jfif",
+      "PackagePath": "staticwebassets\\images\\YoneImg.jfif"
+    },
+    {
       "Id": "C:\\Users\\426133624\\Documents\\ApiLolNew\\wwwroot\\images\\aee897c0-29ae-4922-a862-cdec26ca68ce_YoneImg.jfif",
       "PackagePath": "staticwebassets\\images\\aee897c0-29ae-4922-a862-cdec26ca68ce_YoneImg.jfif"
+    },
+    {
+      "Id": "C:\\Users\\426133624\\Documents\\ApiLolNew\\wwwroot\\images\\ari-lee-ari-lee-7-1.jpg",
+      "PackagePath": "staticwebassets\\images\\ari-lee-ari-lee-7-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\426133624\\Documents\\ApiLolNew\\wwwroot\\images\\ba2d5150-7267-47cd-a130-f76f3f30aed0.jfif",
+      "PackagePath": "staticwebassets\\images\\ba2d5150-7267-47cd-a130-f76f3f30aed0.jfif"
+    },
+    {
+      "Id": "C:\\Users\\426133624\\Documents\\ApiLolNew\\wwwroot\\images\\f8f499ea-8be7-4410-b962-9cad50311cdb.jfif",
+      "PackagePath": "staticwebassets\\images\\f8f499ea-8be7-4410-b962-9cad50311cdb.jfif"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ApiLolNew.Microsoft.AspNetCore.StaticWebAssets.props",

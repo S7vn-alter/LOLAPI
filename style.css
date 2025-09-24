@@ -1,0 +1,63 @@
+/* Fundo inspirado na champ select */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at center, #0a0f14 0%, #000 100%);
+  color: #e5e5e5;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  padding: 20px;
+  font-size: 32px;
+  color: #c8aa6e; /* cor dourada LoL */
+  text-shadow: 0 0 10px #000;
+}
+
+/* Lista em grid */
+#champ-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Cada card de campeão */
+#champ-list div {
+  background: rgba(20, 30, 40, 0.9);
+  border: 2px solid #c8aa6e;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito de hover (quando passa o mouse) */
+#champ-list div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #c8aa6e;
+  cursor: pointer;
+}
+
+/* Nome do campeão */
+#champ-list h2 {
+  margin: 10px 0;
+  font-size: 22px;
+  color: #f0e6d2;
+}
+
+/* Informações (lane e skills) */
+#champ-list p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Imagem do campeão */
+#champ-list img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #c8aa6e;
+}
