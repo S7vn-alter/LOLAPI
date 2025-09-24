@@ -19,6 +19,9 @@ namespace ApiLolNew.Models
         public string SkillE { get; set; }
         public string SkillR { get; set; }
 
+        //Skill Passiva
+        public string Passive { get; set;}
+
         //Imagem
         public string ImageChamp { get; set; }
     }

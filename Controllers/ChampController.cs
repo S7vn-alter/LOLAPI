@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiLolNew.Context;
@@ -24,24 +25,23 @@ namespace ApiLolNew.Controllers
         {
             try
             {
-                // garante que o banco vai gerar o ID
                 champ.Id = 0;
 
-                // salvar imagem
                 if (file != null && file.Length > 0)
                 {
-                    var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
                     if (!Directory.Exists(uploadsPath))
                         Directory.CreateDirectory(uploadsPath);
 
-                    var filePath = Path.Combine(uploadsPath, file.FileName);
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    var filePath = Path.Combine(uploadsPath, uniqueFileName);
 
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
                     }
 
-                    champ.ImageChamp = "/images/" + file.FileName;
+                    champ.ImageChamp = "/images/" + uniqueFileName;
                 }
 
                 _context.Champs.Add(champ);
@@ -112,6 +112,9 @@ namespace ApiLolNew.Controllers
             champBanco.SkillW = champ.SkillW;
             champBanco.SkillE = champ.SkillE;
             champBanco.SkillR = champ.SkillR;
+
+            // 🔹 Atualiza também a Passiva
+            champBanco.Passive = champ.Passive;
 
             _context.Champs.Update(champBanco);
             _context.SaveChanges();
