@@ -1,9 +1,28 @@
-/* Fundo inspirado na champ select */
+/* Fundo inspirado no champ select */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at center, #0a0f14 0%, #000 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+
+  /* imagem de fundo da pasta images2 */
+  background: url('images2/FundoLoL.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
   color: #e5e5e5;
+}
+
+/* Overlay escurecendo o fundo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* ESCURECIMENTO MAIS FORTE — deixe a imagem quase apagada */
+  background: rgba(0, 0, 0, 0.75); /* ajuste esse valor se quiser mais ou menos escuro */
+
+  z-index: 0;
 }
 
 /* Título */
@@ -11,32 +30,40 @@ h1 {
   text-align: center;
   padding: 20px;
   font-size: 32px;
-  color: #c8aa6e; /* cor dourada LoL */
+  color: #c8aa6e;
   text-shadow: 0 0 10px #000;
+  position: relative;
+  z-index: 1;
 }
 
 /* Lista em grid */
 #champ-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   padding: 20px;
+  justify-content: center;
+  justify-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* Cada card de campeão */
 #champ-list div {
-  background: rgba(20, 30, 40, 0.9);
+  background: rgba(20, 30, 40, 0.85);
   border: 2px solid #c8aa6e;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 15px;
   text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito de hover (quando passa o mouse) */
+/* Hover no card */
 #champ-list div:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #c8aa6e;
+  box-shadow: 0 0 30px #c8aa6e, 0 0 40px #f0e6d2;
   cursor: pointer;
 }
 
@@ -45,12 +72,30 @@ h1 {
   margin: 10px 0;
   font-size: 22px;
   color: #f0e6d2;
+  text-shadow: 0 0 5px #000;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
 }
 
-/* Informações (lane e skills) */
+/* Lane e skills */
 #champ-list p {
   margin: 4px 0;
   font-size: 14px;
+  color: #e5e5e5;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Aba da passiva */
+.champ-passive {
+  background: rgba(200, 170, 110, 0.2);
+  border: 1px solid #c8aa6e;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #f0e6d2;
+  text-shadow: 0 0 3px #000;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 
 /* Imagem do campeão */
@@ -60,4 +105,24 @@ h1 {
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid #c8aa6e;
+  margin-top: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover na imagem */
+#champ-list div:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #c8aa6e;
+}
+
+#champ-list div:hover h2,
+#champ-list div:hover p,
+#champ-list div:hover .champ-passive {
+  text-shadow: 0 0 8px #c8aa6e;
+  color: #fdf1d0;
+}
+
+#champ-list div:hover .champ-passive {
+  background: rgba(200, 170, 110, 0.35);
+  box-shadow: 0 0 10px #c8aa6e inset;
 }

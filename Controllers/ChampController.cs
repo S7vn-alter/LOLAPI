@@ -29,7 +29,7 @@ namespace ApiLolNew.Controllers
 
                 if (file != null && file.Length > 0)
                 {
-                    var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+                    var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(),"images");
                     if (!Directory.Exists(uploadsPath))
                         Directory.CreateDirectory(uploadsPath);
 
@@ -139,3 +139,5 @@ namespace ApiLolNew.Controllers
         }
     }
 }
+
+ 

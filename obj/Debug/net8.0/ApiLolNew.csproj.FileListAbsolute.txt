@@ -152,6 +152,7 @@ C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\ApiLolNew.AssemblyInfo.c
 C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\ApiLolNew.csproj.CoreCompileInputs.cache
 C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\ApiLolNew.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\ApiLolNew.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\ApiLolNew.sourcelink.json
 C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\staticwebassets\msbuild.ApiLolNew.Microsoft.AspNetCore.StaticWebAssets.props
@@ -166,5 +167,3 @@ C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\refint\ApiLolNew.dll
 C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\ApiLolNew.pdb
 C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\ApiLolNew.genruntimeconfig.cache
 C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\ref\ApiLolNew.dll
-C:\Users\426133624\Documents\ApiLolNew\bin\Debug\net8.0\ApiLolNew.staticwebassets.runtime.json
-C:\Users\426133624\Documents\ApiLolNew\obj\Debug\net8.0\ApiLolNew.sourcelink.json

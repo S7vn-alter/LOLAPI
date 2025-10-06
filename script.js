@@ -34,7 +34,8 @@ async function carregarChamps() {
         <p><strong>W:</strong> ${champ.skillW}</p>
         <p><strong>E:</strong> ${champ.skillE}</p>
         <p><strong>R:</strong> ${champ.skillR}</p>
-        <img src="${champ.imageChamp}" alt="${champ.name}" width="200">
+        <div class="champ-passive">Passiva: ${champ.passive}</div>
+        <img src="${champ.imageChamp}" alt="${champ.name}">
       `;
 
       champList.appendChild(champDiv);

@@ -1,5 +1,6 @@
 using ApiLolNew.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,8 +32,18 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// 🔹 Serve arquivos estáticos (wwwroot/images)
-app.UseStaticFiles();
+// 🔹 Configura para servir a pasta "images" como arquivos estáticos
+var imagesPath = Path.Combine(Directory.GetCurrentDirectory(), "images");
+if (!Directory.Exists(imagesPath))
+{
+    Directory.CreateDirectory(imagesPath);
+}
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(imagesPath),
+    RequestPath = "/images"
+});
 
 app.UseAuthorization();
 
