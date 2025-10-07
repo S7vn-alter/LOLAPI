@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Cadastrar Campeão</title>
+  <link rel="stylesheet" href="cadastro-style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastrar Campeão</h1>
+
+    <form id="champForm" enctype="multipart/form-data">
+      <label>Nome:</label>
+      <input type="text" id="Name" required>
+
+      <label>Lane:</label>
+      <input type="text" id="Lane" required>
+
+      <label>Skill Q:</label>
+      <input type="text" id="SkillQ" required>
+
+      <label>Skill W:</label>
+      <input type="text" id="SkillW" required>
+
+      <label>Skill E:</label>
+      <input type="text" id="SkillE" required>
+
+      <label>Skill R:</label>
+      <input type="text" id="SkillR" required>
+
+      <label>Passiva:</label>
+      <input type="text" id="Passive" required>
+
+      <label>ImageChamp (nome ou url que a API grava):</label>
+      <input type="text" id="ImageChamp" required>
+
+      <label>Arquivo de imagem (file):</label>
+      <input type="file" id="file" accept="image/*">
+
+      <button type="submit">Salvar Campeão</button>
+    </form>
+
+    <a href="./index.html" class="link">Ver Campeões</a>
+  </div>
+
+  <script src="cadastro-script.js"></script>
+</body>
+</html>
